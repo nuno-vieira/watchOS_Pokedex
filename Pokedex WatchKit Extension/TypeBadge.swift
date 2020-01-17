@@ -21,6 +21,6 @@ struct TypeBadge: View {
 
 struct TypeBadge_Previews: PreviewProvider {
     static var previews: some View {
-        TypeBadge(pkType: PokemonType(id: "normal"))
+        TypeBadge(pkType: PokemonType(id: "Normal"))
     }
 }

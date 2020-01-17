@@ -17,23 +17,24 @@ struct PokemonDetail: View {
                 NavigationLink(destination: PokemonSprites(pokemon: pokemon)) {
                     Image(pokemon.spritePC + "-detail")
                         .resizable()
-                        .frame(width: 140, height: 140)
+                        .frame(width: 140.0, height: 140.0)
                 }
             }
             Section(header: Text("Types")) {
-                ForEach(pokemon.pkType) { pkType in
-                    NavigationLink(destination: TypeDetail(pkType: pkType)) {
+                ForEach(pokemon.types) { type in
+                    NavigationLink(destination: TypeDetail(pkType: type)) {
                         HStack{
-                            Image(pkType.id)
+                            Image(type.name)
                                 .resizable()
                                 .frame(width: 25, height: 25)
-                            Text(pkType.name)
+                            Text(type.name)
                         }
                     }
+                    .listRowPlatterColor(Color(type.color))
                 }
             }
         }
-        .navigationBarTitle(pokemon.name)
+        .navigationBarTitle("\(pokemon.printableNumber) \(pokemon.name)")
     }
 }
 

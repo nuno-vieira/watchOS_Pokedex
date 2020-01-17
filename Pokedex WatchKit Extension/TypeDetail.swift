@@ -21,6 +21,6 @@ struct TypeDetail: View {
 
 struct TypeDetail_Previews: PreviewProvider {
     static var previews: some View {
-        TypeDetail(pkType: PokemonType(id: "normal"))
+        TypeDetail(pkType: PokemonType(id: "Normal"))
     }
 }
